@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <title>Piano Visualizer</title>
+
+  <script src="https://unpkg.com/@magenta/music@1.1.9/dist/magentamusic.js"></script>
+
+  <script src="midi-visualizer.js"></script>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link href="./styles.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Midi file visualizer</h1>
+  <div class='flex-row center'>
+    <button id="playBtn" disabled>
+      <i id="icon" class="fas fa-play"></i>
+    </button>
+    <span class="input">tempo: <input id="tempoInput" value="100" placeholder="tempo"></span>
+  </div>
+  <div class='flex-row'>
+  <midi-visualizer
+      id="visualizer"
+      url="https://cdn.glitch.com/3312a3b4-6418-4bed-a0bd-3a0ca4dfa2fb%2Fchopin.mid?1534369337985">
+  </midi-visualizer>
+  <div class='flex-column'>
+  <label>
+   <p> Drop midi file here </p>
+  </label>
+  <input type="file" class="custom-file-input" id='dropZone'>
+  </div>
+</div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="eventListners.js"></script>
+</body>
+</html>

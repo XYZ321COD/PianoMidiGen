@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>utils.pipelines package &#8212; AiPianoGenerator 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="utils.project_utils package" href="utils.project_utils.html" />
+    <link rel="prev" title="utils package" href="utils.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="utils-pipelines-package">
+<h1>utils.pipelines package<a class="headerlink" href="#utils-pipelines-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-utils.pipelines.pipeline1">
+<span id="utils-pipelines-pipeline1-module"></span><h2>utils.pipelines.pipeline1 module<a class="headerlink" href="#module-utils.pipelines.pipeline1" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="utils.pipelines.pipeline1.MidiToPythonVariablePipeline">
+<em class="property">class </em><code class="sig-prename descclassname">utils.pipelines.pipeline1.</code><code class="sig-name descname">MidiToPythonVariablePipeline</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'Read midis to python variable'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.pipelines.pipeline1.MidiToPythonVariablePipeline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">magenta.pipelines.pipeline.Pipeline</span></code></p>
+<dl class="py method">
+<dt id="utils.pipelines.pipeline1.MidiToPythonVariablePipeline.get_stats">
+<code class="sig-name descname">get_stats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.pipelines.pipeline1.MidiToPythonVariablePipeline.get_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns stats about pipeline</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="utils.pipelines.pipeline1.MidiToPythonVariablePipeline.transform">
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">folder</span></em>, <em class="sig-param"><span class="n">seed_int</span><span class="o">=</span><span class="default_value">666</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.pipelines.pipeline1.MidiToPythonVariablePipeline.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read all the midi files from folder to python variable</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(string) folder: path to folder where midi files are located</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>python list of all midi files</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-utils.pipelines.pipeline2">
+<span id="utils-pipelines-pipeline2-module"></span><h2>utils.pipelines.pipeline2 module<a class="headerlink" href="#module-utils.pipelines.pipeline2" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="utils.pipelines.pipeline2.MidiFilesToPianoRoll">
+<em class="property">class </em><code class="sig-prename descclassname">utils.pipelines.pipeline2.</code><code class="sig-name descname">MidiFilesToPianoRoll</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'Transform midi files to piano roll format'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.pipelines.pipeline2.MidiFilesToPianoRoll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">magenta.pipelines.pipeline.Pipeline</span></code></p>
+<dl class="py method">
+<dt id="utils.pipelines.pipeline2.MidiFilesToPianoRoll.get_stats">
+<code class="sig-name descname">get_stats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.pipelines.pipeline2.MidiFilesToPianoRoll.get_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns stats about pipeline</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="utils.pipelines.pipeline2.MidiFilesToPianoRoll.transform">
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">list_all_midi</span></em>, <em class="sig-param"><span class="n">fs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.pipelines.pipeline2.MidiFilesToPianoRoll.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transforming midi format into pianoRoll format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(list) list_all_midi: list of all midi files</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>(float) fs: frame per second</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict of format piano_roll - typical way of processing midi files</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-utils.pipelines.pipeline3">
+<span id="utils-pipelines-pipeline3-module"></span><h2>utils.pipelines.pipeline3 module<a class="headerlink" href="#module-utils.pipelines.pipeline3" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="utils.pipelines.pipeline3.PianoRollsToIntoNoteAndTimeSteps">
+<em class="property">class </em><code class="sig-prename descclassname">utils.pipelines.pipeline3.</code><code class="sig-name descname">PianoRollsToIntoNoteAndTimeSteps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'Transform piano rolls into note and time steps'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.pipelines.pipeline3.PianoRollsToIntoNoteAndTimeSteps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">magenta.pipelines.pipeline.Pipeline</span></code></p>
+<dl class="py method">
+<dt id="utils.pipelines.pipeline3.PianoRollsToIntoNoteAndTimeSteps.get_stats">
+<code class="sig-name descname">get_stats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.pipelines.pipeline3.PianoRollsToIntoNoteAndTimeSteps.get_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns stats about pipeline</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="utils.pipelines.pipeline3.PianoRollsToIntoNoteAndTimeSteps.transform">
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dict_time_notes</span></em>, <em class="sig-param"><span class="n">seq_len</span><span class="o">=</span><span class="default_value">50</span></em>, <em class="sig-param"><span class="n">fp</span><span class="o">=</span><span class="default_value">30</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.pipelines.pipeline3.PianoRollsToIntoNoteAndTimeSteps.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transforming midi format into pianoRoll format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(dict) dict_time_notes: PianoRolls format of midi files.</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>(float) seq_len: length of sequences</p>
+</dd>
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(float) fp: frames per second</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of all midi files but in NoteAndTimeSteps Format</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-utils.pipelines.pipeline4">
+<span id="utils-pipelines-pipeline4-module"></span><h2>utils.pipelines.pipeline4 module<a class="headerlink" href="#module-utils.pipelines.pipeline4" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="utils.pipelines.pipeline4.NotesAndTimesStepIntoDeepLearningInput">
+<em class="property">class </em><code class="sig-prename descclassname">utils.pipelines.pipeline4.</code><code class="sig-name descname">NotesAndTimesStepIntoDeepLearningInput</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'Transform format of notes and times step into deep learning input'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.pipelines.pipeline4.NotesAndTimesStepIntoDeepLearningInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">magenta.pipelines.pipeline.Pipeline</span></code></p>
+<dl class="py method">
+<dt id="utils.pipelines.pipeline4.NotesAndTimesStepIntoDeepLearningInput.get_stats">
+<code class="sig-name descname">get_stats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.pipelines.pipeline4.NotesAndTimesStepIntoDeepLearningInput.get_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns stats about pipeline</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="utils.pipelines.pipeline4.NotesAndTimesStepIntoDeepLearningInput.transform">
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dict_keys_time</span></em>, <em class="sig-param"><span class="n">seq_len</span><span class="o">=</span><span class="default_value">50</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.pipelines.pipeline4.NotesAndTimesStepIntoDeepLearningInput.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate input and the target of our deep learning for one music</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(dict) dict_keys_time : Dictionary of timestep and notes</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>(int) seq_len : The length of the sequence</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of all midi files but in format that can be accepted by neural network - input, target</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple(list, list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-utils.pipelines.pipeline5">
+<span id="utils-pipelines-pipeline5-module"></span><h2>utils.pipelines.pipeline5 module<a class="headerlink" href="#module-utils.pipelines.pipeline5" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="utils.pipelines.pipeline5.NotesAndTimesStepIntoMidi">
+<em class="property">class </em><code class="sig-prename descclassname">utils.pipelines.pipeline5.</code><code class="sig-name descname">NotesAndTimesStepIntoMidi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'Transformat NotesAndTimesSTep format into Midi'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.pipelines.pipeline5.NotesAndTimesStepIntoMidi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">magenta.pipelines.pipeline.Pipeline</span></code></p>
+<p>Transformat NotesAndTimesSTep format into Midi</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(string) name: Pipeline name.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="utils.pipelines.pipeline5.NotesAndTimesStepIntoMidi.get_stats">
+<code class="sig-name descname">get_stats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.pipelines.pipeline5.NotesAndTimesStepIntoMidi.get_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns stats about pipeline</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="utils.pipelines.pipeline5.NotesAndTimesStepIntoMidi.transform">
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">piano_roll</span></em>, <em class="sig-param"><span class="n">fs</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">program</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.pipelines.pipeline5.NotesAndTimesStepIntoMidi.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a Piano Roll array into a PrettyMidi object
+with a single instrument</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(np.ndarray) piano_roll : Piano roll of piano instrument</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>(int) fs : Sampling frequency of the columns</p>
+</dd>
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(int) program: The program number of the instrument</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A pretty_midi.PrettyMIDI class instance describing the piano roll.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pretty_midi.PrettyMIDI</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-utils.pipelines.pipeline6">
+<span id="utils-pipelines-pipeline6-module"></span><h2>utils.pipelines.pipeline6 module<a class="headerlink" href="#module-utils.pipelines.pipeline6" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="utils.pipelines.pipeline6.ModelOutPutIntoMidiFile">
+<em class="property">class </em><code class="sig-prename descclassname">utils.pipelines.pipeline6.</code><code class="sig-name descname">ModelOutPutIntoMidiFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'Transform model output into midi file format'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.pipelines.pipeline6.ModelOutPutIntoMidiFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">magenta.pipelines.pipeline.Pipeline</span></code></p>
+<p>Transform model output into midi file format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(string) name: Pipeline name.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="utils.pipelines.pipeline6.ModelOutPutIntoMidiFile.get_stats">
+<code class="sig-name descname">get_stats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.pipelines.pipeline6.ModelOutPutIntoMidiFile.get_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns stats about pipeline</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="utils.pipelines.pipeline6.ModelOutPutIntoMidiFile.transform">
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">note_tokenizer</span></em>, <em class="sig-param"><span class="n">generate</span></em>, <em class="sig-param"><span class="n">midi_file_name</span><span class="o">=</span><span class="default_value">'result.mid'</span></em>, <em class="sig-param"><span class="n">start_index</span><span class="o">=</span><span class="default_value">49</span></em>, <em class="sig-param"><span class="n">fs</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">max_generated</span><span class="o">=</span><span class="default_value">10000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.pipelines.pipeline6.ModelOutPutIntoMidiFile.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a model output into a midi file format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(NoteTokenizer) note_tokenizer :   instance of class holdin info about training set</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>(np.darray) generate :  generated data by model</p>
+</dd>
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(string)  midi_file_name : path to save music to</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>(int) start_index:  size of the window</p>
+</dd>
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(int) fs: frame per second</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>(int) max_generated: defining the length of generated song</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>midi_file</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>MIDI</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-utils.pipelines">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-utils.pipelines" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">AiPianoGenerator</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Projekt</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="eval.html">eval module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model.html">model module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="train.html">train module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trainer.html">trainer module</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="utils.html">utils package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">Projekt</a><ul>
+  <li><a href="utils.html">utils package</a><ul>
+      <li>Previous: <a href="utils.html" title="previous chapter">utils package</a></li>
+      <li>Next: <a href="utils.project_utils.html" title="next chapter">utils.project_utils package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Michal Znalezniak.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/utils.pipelines.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

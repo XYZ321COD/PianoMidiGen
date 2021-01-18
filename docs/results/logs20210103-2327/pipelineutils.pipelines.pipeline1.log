@@ -1,0 +1,2 @@
+2021-01-03 23:27:04,505:DEBUG:Read how_many_mid_files: 100 midi files from location ../dataset/maestro-v3.0.0/**/*.midi
+2021-01-03 23:27:26,970:DEBUG:Read how_many_mid_files: 100 midi files from location ../dataset/maestro-v3.0.0/**/*.midi

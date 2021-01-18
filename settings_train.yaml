@@ -1,0 +1,10 @@
+seq_len: 20
+epochs: 111
+frame_per_seconds: 5
+number_of_songs_to_train_on: 1
+train_on_floyd: False
+path_to_dataset: "../dataset2/maestro-v3.0.0/**/*.midi"
+path_to_save_result_to: "./results/"
+path_to_save_models_to: "./models/"
+batch_song: 1
+batch_sequences: 96

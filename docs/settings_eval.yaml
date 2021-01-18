@@ -1,0 +1,4 @@
+path_to_model: "model100_1.h5"
+path_to_tokenizer: "tokenizer100_1.p"
+frame_per_seconds: 5
+song_length: 1000

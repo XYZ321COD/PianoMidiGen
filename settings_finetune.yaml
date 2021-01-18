@@ -1,0 +1,12 @@
+path_to_model: "111_1.h5"
+path_to_tokenizer: "111_1.p"
+model_prefix: "Piano_AI_GRU_3_TIMES"
+frame_per_seconds: 5
+path_to_dataset: "../dataset2/maestro-v3.0.0/**/*.midi"
+path_to_save_result_to: "./results/"
+path_to_save_models_to: "./models/"
+number_of_songs_to_train_on: 1
+seq_len: 20
+epochs: 20
+batch_song: 1
+batch_sequences: 96

@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>utils.project_utils package &#8212; AiPianoGenerator 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="utils.pipelines package" href="utils.pipelines.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="utils-project-utils-package">
+<h1>utils.project_utils package<a class="headerlink" href="#utils-project-utils-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-utils.project_utils.logger_">
+<span id="utils-project-utils-logger-module"></span><h2>utils.project_utils.logger_ module<a class="headerlink" href="#module-utils.project_utils.logger_" title="Permalink to this headline">¶</a></h2>
+<p>Module used to log info about training, and data tranformation processes.</p>
+<dl class="py function">
+<dt id="utils.project_utils.logger_.create_logger">
+<code class="sig-prename descclassname">utils.project_utils.logger_.</code><code class="sig-name descname">create_logger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">current_time</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.project_utils.logger_.create_logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates logger</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(string) name : name of the logger</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Logger used to save data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Logger</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="utils.project_utils.logger_.mkdir_p">
+<code class="sig-prename descclassname">utils.project_utils.logger_.</code><code class="sig-name descname">mkdir_p</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.project_utils.logger_.mkdir_p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create dir is such does not exist already</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(string) path : path to dir</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-utils.project_utils.noteToken">
+<span id="utils-project-utils-notetoken-module"></span><h2>utils.project_utils.noteToken module<a class="headerlink" href="#module-utils.project_utils.noteToken" title="Permalink to this headline">¶</a></h2>
+<p>Module used to operate on notes</p>
+<dl class="py class">
+<dt id="utils.project_utils.noteToken.NoteTokenizer">
+<em class="property">class </em><code class="sig-prename descclassname">utils.project_utils.noteToken.</code><code class="sig-name descname">NoteTokenizer</code><a class="headerlink" href="#utils.project_utils.noteToken.NoteTokenizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="utils.project_utils.noteToken.NoteTokenizer.add_new_note">
+<code class="sig-name descname">add_new_note</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">note</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.project_utils.noteToken.NoteTokenizer.add_new_note" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a new note into the dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(str) note :  new note</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="utils.project_utils.noteToken.NoteTokenizer.partial_fit">
+<code class="sig-name descname">partial_fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">notes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.project_utils.noteToken.NoteTokenizer.partial_fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Partial fit on the dictionary of the tokenizer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(list) notes : list of notes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="utils.project_utils.noteToken.NoteTokenizer.transform">
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">list_array</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.project_utils.noteToken.NoteTokenizer.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform a list of note in string into index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(list) list_array: list of note in string format</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of index of notes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-utils.project_utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-utils.project_utils" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">AiPianoGenerator</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Projekt</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="eval.html">eval module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model.html">model module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="train.html">train module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trainer.html">trainer module</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="utils.html">utils package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">Projekt</a><ul>
+  <li><a href="utils.html">utils package</a><ul>
+      <li>Previous: <a href="utils.pipelines.html" title="previous chapter">utils.pipelines package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Michal Znalezniak.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/utils.project_utils.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

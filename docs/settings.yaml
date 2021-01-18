@@ -1,0 +1,9 @@
+seq_len: 50
+epochs: 2
+frame_per_seconds: 5
+number_of_songs_to_train_on: 1
+train_on_floyd: False
+path_to_save_result_to: "./results/"
+path_to_save_models_to: "./models/"
+batch_song: 1
+batch_sequences: 96

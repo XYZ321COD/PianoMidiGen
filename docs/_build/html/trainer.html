@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>trainer module &#8212; AiPianoGenerator 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="utils package" href="utils.html" />
+    <link rel="prev" title="train module" href="train.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-trainer">
+<span id="trainer-module"></span><h1>trainer module<a class="headerlink" href="#module-trainer" title="Permalink to this headline">¶</a></h1>
+<p>Module defining how deep learning models are trained</p>
+<dl class="py class">
+<dt id="trainer.TrainModel">
+<em class="property">class </em><code class="sig-prename descclassname">trainer.</code><code class="sig-name descname">TrainModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">epochs</span></em>, <em class="sig-param"><span class="n">note_tokenizer</span></em>, <em class="sig-param"><span class="n">sampled_midi</span></em>, <em class="sig-param"><span class="n">frame_per_second</span></em>, <em class="sig-param"><span class="n">batch_sequences</span></em>, <em class="sig-param"><span class="n">batch_song</span></em>, <em class="sig-param"><span class="n">optimizer</span></em>, <em class="sig-param"><span class="n">checkpoint</span></em>, <em class="sig-param"><span class="n">loss_fn</span></em>, <em class="sig-param"><span class="n">checkpoint_prefix</span></em>, <em class="sig-param"><span class="n">total_songs</span></em>, <em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">seq_len</span></em>, <em class="sig-param"><span class="n">train_summary_writer</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trainer.TrainModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class responsible of training deep learning models</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(int) epochs: how many epochs</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>(noteToken) note_tokenizer: instance of class holding information about training process</p>
+</dd>
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(sampled_midi) midi_files : list of midi_files</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>(int) frame_per_second: number of frame per seconds</p>
+</dd>
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(int) batch_sequences : size of batch of sequences</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>(int) batch_song : size of batch of songs</p>
+</dd>
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(keras.optimizer) optimizer - type of optimizer used</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>(tensorflow.checkpoint) checkpoint - used for saving data about training</p>
+</dd>
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(keras.loss_function) loss_fn - type of loss function used</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>(tensorflow.checkpoint_prefix) checkpoint_prefix - prefix to checkpoint</p>
+</dd>
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(int) total_songs - number of songs model will be trained on</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>(tensorflow.model) model - deep learning model</p>
+</dd>
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(int) seq_len  - size of sequences</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>(tensorflow.train_summary_writer) train_summary_writer - used for saving data about traning process</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="trainer.TrainModel.train">
+<code class="sig-name descname">train</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trainer.TrainModel.train" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="trainer.TrainModel.train_step">
+<code class="sig-name descname">train_step</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inputs</span></em>, <em class="sig-param"><span class="n">targets</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trainer.TrainModel.train_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>One step of training process</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>(np.ndarray) inputs: inputs of model</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>(np.ndarray) targets: targets of model</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>value of the loss function</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">AiPianoGenerator</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Projekt</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="eval.html">eval module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model.html">model module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="train.html">train module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">trainer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">utils package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">Projekt</a><ul>
+      <li>Previous: <a href="train.html" title="previous chapter">train module</a></li>
+      <li>Next: <a href="utils.html" title="next chapter">utils package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Michal Znalezniak.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/trainer.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
