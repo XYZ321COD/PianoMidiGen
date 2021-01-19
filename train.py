@@ -55,7 +55,6 @@ checkpoint = tf.train.Checkpoint(optimizer=optimizer,
 checkpoint_dir = './training_checkpoints'
 checkpoint_prefix = os.path.join(checkpoint_dir, "ckpt")
 loss_fn = sparse_categorical_crossentropy
-
 train_class = TrainModel(EPOCHS, note_tokenizer, full_notes, FRAME_PER_SECOND,
                          BATCH_NNET_SIZE, BATCH_SONG, optimizer, checkpoint, loss_fn,
                          checkpoint_prefix, TOTAL_SONGS, model, seq_len, train_summary_writer)
