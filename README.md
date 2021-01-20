@@ -5,6 +5,7 @@ It's based upon TensorFlow, Magenta, numpy Libraries.
 It's consist of few modules.
 
 - model.py - defines architectures of models - you can add your architecture and train it.
+- download.py - download MEASTRO dataset, call it before it
 - trainer.py - defines process of training.
 - train.py - runs process of training, reads hyperparameters from config files.
 - finetune.py - runs finetunning of already existing model.h, reads hyperparameters from config files.
@@ -15,6 +16,12 @@ It's consist of few modules.
   - project_utils - logging functionality etc.
 - settings.yml - can be overwrited to define new parameters of training.
 - settings_eval.yml - can be overwrited to define new parameters of evaluation.
+
+# Before training download dataset
+
+```sh
+python download.py
+```
 
 # Training
 
