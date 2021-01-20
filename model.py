@@ -3,7 +3,32 @@
 
 import tensorflow as tf
 from tensorflow.keras import backend as K
-from attentionLayer import SeqSelfAttention
+
+
+def create_model_smaller_emb(seq_len, unique_notes, dropout=0.0, output_emb=256, rnn_unit=50, dense_unit=256):
+    """
+    Creates Deep learning model with 3 layer of GRU
+    """
+    inputs = tf.keras.layers.Input(shape=(seq_len))
+    embedding = tf.keras.layers.Embedding(
+        input_dim=unique_notes+1, output_dim=output_emb, input_length=seq_len)(inputs)
+    forward_pass = tf.keras.layers.Bidirectional(
+        tf.keras.layers.GRU(rnn_unit, return_sequences=True))(embedding)
+    forward_pass = tf.keras.layers.Dropout(dropout)(forward_pass)
+    forward_pass = tf.keras.layers.Bidirectional(
+        tf.keras.layers.GRU(rnn_unit, return_sequences=True))(forward_pass)
+    forward_pass = tf.keras.layers.Dropout(dropout)(forward_pass)
+    forward_pass = tf.keras.layers.Bidirectional(
+        tf.keras.layers.GRU(rnn_unit))(forward_pass)
+    forward_pass = tf.keras.layers.Dropout(dropout)(forward_pass)
+    forward_pass = tf.keras.layers.Dense(dense_unit)(forward_pass)
+    forward_pass = tf.keras.layers.LeakyReLU()(forward_pass)
+    outputs = tf.keras.layers.Dense(
+        unique_notes+1, activation="softmax")(forward_pass)
+
+    model = tf.keras.Model(inputs=inputs, outputs=outputs,
+                           name='Piano_AI_GRU_3_Times_smaller')
+    return model
 
 
 def create_model(seq_len, unique_notes, dropout=0.0, output_emb=2000, rnn_unit=128, dense_unit=2000):

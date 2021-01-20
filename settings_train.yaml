@@ -3,7 +3,7 @@ epochs: 5
 frame_per_seconds: 5
 number_of_songs_to_train_on: 100
 train_on_floyd: False
-path_to_dataset: "../dataset/maestro-v3.0.0/**/*.midi"
+path_to_dataset: "./dataset/maestro-v3.0.0-midi/maestro-v3.0.0/**/*.midi"
 path_to_save_result_to: "./results/"
 path_to_save_models_to: "./models/"
 batch_song: 16
