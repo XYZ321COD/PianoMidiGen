@@ -12,8 +12,6 @@ import yaml
 from utils.project_utils.logger_ import create_logger
 import webbrowser
 import os
-from attentionLayer import SeqSelfAttention
-
 
 logger = create_logger(__name__)
 logger.info("Started evaluation")
@@ -22,7 +20,7 @@ file = open(r'settings_eval.yaml')
 settings_eval = yaml.load(file, Loader=yaml.FullLoader)
 
 model = tf.keras.models.load_model(
-    "models/" + "model" + settings_eval['model_prefix'] + settings_eval['path_to_model'], custom_objects=SeqSelfAttention.get_custom_objects())
+    "models/" + "model" + settings_eval['model_prefix'] + settings_eval['path_to_model'])
 note_tokenizer = pickle.load(
     open("models/" + "tokenizer" + settings_eval['model_prefix'] + settings_eval['path_to_tokenizer'], "rb"))
 

@@ -1,6 +1,6 @@
-path_to_model: "18_100.h5"
-path_to_tokenizer: "5_100.p"
-model_prefix: "Piano_AI_GRU_3_TIMES"
+path_to_model: "100_50.h5"
+path_to_tokenizer: "100_50.p"
+model_prefix: "Piano_AI_GRU_3_TIMES_smaller"
 frame_per_seconds: 5
 path_to_dataset: "./dataset/maestro-v3.0.0-midi/maestro-v3.0.0/**/*.midi"
 path_to_save_result_to: "./results/"

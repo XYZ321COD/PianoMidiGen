@@ -3,7 +3,7 @@ import utils.pipelines as df
 import utils.project_utils.noteToken as nt
 from trainer import TrainModel
 import os
-from model import create_model, create_model_deep2times, create_model_2TimesWider, create_model_attention
+from model import create_model, create_model_deep2times, create_model_2TimesWider
 import tensorflow as tf
 from tensorflow.keras.losses import sparse_categorical_crossentropy
 from tensorflow.keras.optimizers import Nadam
