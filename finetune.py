@@ -3,7 +3,6 @@ import webbrowser
 import utils.pipelines as df
 import utils.project_utils.noteToken as nt
 from tqdm import tqdm
-from model import create_model
 import tensorflow as tf
 from numpy.random import choice
 import pickle
@@ -12,8 +11,6 @@ import yaml
 from utils.project_utils.logger_ import create_logger
 import webbrowser
 import os
-from tensorflow.keras.optimizers import Nadam
-from tensorflow.keras.losses import sparse_categorical_crossentropy
 from trainer import TrainModel
 import datetime
 import re
@@ -58,22 +55,23 @@ train_summary_writer = tf.summary.create_file_writer(train_log_dir)
 
 m = re.search(r'[^_]*', settings_finetune['path_to_model'])
 PREV_AMOUT_OF_EPOCH = int(m.group(0))
-EPOCHS = settings_finetune['epochs']
-BATCH_SONG = settings_finetune['batch_song']
-BATCH_NNET_SIZE = settings_finetune['batch_sequences']
-TOTAL_SONGS = settings_finetune['number_of_songs_to_train_on']
-FRAME_PER_SECOND = settings_finetune['frame_per_seconds']
-optimizer = Nadam()
+epochs = settings_finetune['epochs']
+batch_song = settings_finetune['batch_song']
+batch_piano_rolls = settings_finetune['batch_sequences']
+number_of_songs_to_train_on = settings_finetune['number_of_songs_to_train_on']
+frame_per_second = settings_finetune['frame_per_seconds']
 
-checkpoint = tf.train.Checkpoint(optimizer=optimizer,
-                                 model=model)
+optimizer = tf.keras.optimizers.get(settings_finetune['optimizer'])
+optimizer.lr = settings_finetune['lr']
+loss_fn = tf.keras.losses.get(settings_finetune['loss_function'])
+
+checkpoint = tf.train.Checkpoint(optimizer=optimizer, model=model)
 checkpoint_dir = './training_checkpoints'
 checkpoint_prefix = os.path.join(checkpoint_dir, "ckpt")
-loss_fn = sparse_categorical_crossentropy
 
-train_class = TrainModel(EPOCHS, note_tokenizer, full_notes, FRAME_PER_SECOND,
-                         BATCH_NNET_SIZE, BATCH_SONG, optimizer, checkpoint, loss_fn,
-                         checkpoint_prefix, TOTAL_SONGS, model, seq_len, train_summary_writer)
+train_class = TrainModel(epochs, note_tokenizer, full_notes, frame_per_second,
+                         batch_piano_rolls, batch_song, optimizer, checkpoint, loss_fn,
+                         checkpoint_prefix, number_of_songs_to_train_on, model, seq_len, train_summary_writer)
 
 train_class.train()
 

@@ -25,8 +25,8 @@ class MidiToPythonVariablePipeline(pipeline.Pipeline):
         self.stat1 = statistics.Counter('how_many_mid_files')
         self.stats = [self.stat1]
 
-    def transform(self, folder, seed_int=666):
-        # To make sure that training is always on the same data i used seed
+    def transform(self, folder):
+        # To make sure that training is always on the same data I used seed
         """Read all the midi files from folder to python variable
 
         :param: (string) folder: path to folder where midi files are located
@@ -34,7 +34,7 @@ class MidiToPythonVariablePipeline(pipeline.Pipeline):
         :rtype: list        
         """
         list_all_midi = glob.glob(folder)
-        seed(seed_int)
+        seed(666)
         shuffle(list_all_midi)
         for _ in range(100):
             self.stat1.increment()

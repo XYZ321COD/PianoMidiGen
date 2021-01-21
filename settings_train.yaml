@@ -8,3 +8,6 @@ path_to_save_result_to: "./results/"
 path_to_save_models_to: "./models/"
 batch_song: 16
 batch_sequences: 96
+lr: 0.001
+optimizer: "Nadam"
+loss_function: "sparse_categorical_crossentropy"

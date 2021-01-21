@@ -6,6 +6,11 @@ from tqdm import tqdm
 import tensorflow as tf
 import numpy as np
 
+from utils.project_utils.logger_ import create_logger
+
+
+logger = create_logger(__name__, log_to_file=False)
+
 
 class TrainModel:
     """Class responsible of training deep learning models
@@ -22,7 +27,7 @@ class TrainModel:
     :param: (tensorflow.checkpoint_prefix) checkpoint_prefix - prefix to checkpoint
     :param: (int) total_songs - number of songs model will be trained on
     :param: (tensorflow.model) model - deep learning model
-    :param: (int) seq_len  - size of sequences 
+    :param: (int) seq_len  - size of sequences
     :param: (tensorflow.train_summary_writer) train_summary_writer - used for saving data about traning process
 
     """
@@ -71,7 +76,7 @@ class TrainModel:
                     loss = self.train_step(
                         inputs_nnet, outputs_nnet) / self.batch_sequences
                     loss_total += tf.math.reduce_sum(loss)
-                print("epochs {} | Batch {} | total loss : {}".format(
+                logger.info("epochs {} | Batch {} | total loss : {}".format(
                     epoch + 1, count, loss_total))
             with self.train_summary_writer.as_default():
                 tf.summary.scalar('Loss', loss_total /
@@ -79,7 +84,7 @@ class TrainModel:
                 self.train_summary_writer.flush()
         self.checkpoint.save(file_prefix=self.checkpoint_prefix)
 
-    @tf.function
+    @ tf.function
     def train_step(self, inputs, targets):
         """One step of training process
 

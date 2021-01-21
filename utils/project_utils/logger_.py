@@ -33,7 +33,7 @@ def mkdir_p(path):
                 raise
 
 
-def create_logger(name=None, current_time=None, log_to_console=True):
+def create_logger(name=None, current_time=None, log_to_console=True, log_to_file=True):
     '''Creates logger
 
     :param: (string) name : name of the logger
@@ -50,11 +50,11 @@ def create_logger(name=None, current_time=None, log_to_console=True):
         console_handler = logging.StreamHandler(sys.stdout)
         console_handler.setFormatter(formatter)
         logger.addHandler(console_handler)
-
-    filename = '{}\logs{}\pipeline{}.log'.format(
-        settings['path_to_save_result_to'], current_time, name)
-    mkdir_p(os.path.dirname(filename))
-    file_handler = logging.FileHandler(filename)
-    file_handler.setFormatter(formatter)
-    logger.addHandler(file_handler)
+    if log_to_file:
+        filename = '{}\logs{}\pipeline{}.log'.format(
+            settings['path_to_save_result_to'], current_time, name)
+        mkdir_p(os.path.dirname(filename))
+        file_handler = logging.FileHandler(filename)
+        file_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
     return logger

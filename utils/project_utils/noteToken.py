@@ -27,13 +27,13 @@ class NoteTokenizer:
         return np.array(transformed_list, dtype=np.int32)
 
     def add_all_notes(self, notes):
-        """ Partial fit on the dictionary of the tokenizer
+        """ Adding all notes into the dictionary of the tokenizer
 
         :param: (list) notes : list of notes
 
         """
         for note in notes:
-            # Have to turn array into string bc bc array type can't be key for map
+            # Have to turn array into string bc array type can't be key for map
             note_str = ','.join(str(a) for a in note)
             if note_str in self.notes_to_index:
                 pass
