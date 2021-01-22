@@ -36,7 +36,7 @@ class MidiToPythonVariablePipeline(pipeline.Pipeline):
         list_all_midi = glob.glob(folder)
         seed(666)
         shuffle(list_all_midi)
-        for _ in range(100):
+        for _ in range(len(list_all_midi)):
             self.stat1.increment()
         logger.debug("Read {} midi files from location {}".format(
             str(self.stat1), folder))
