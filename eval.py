@@ -3,7 +3,6 @@ import webbrowser
 import utils.pipelines as df
 import utils.project_utils.noteToken as nt
 from tqdm import tqdm
-from model import create_model
 import tensorflow as tf
 from numpy.random import choice
 import pickle
@@ -34,7 +33,7 @@ logger.info("Input of the model has shape {} and Output is {}".format(
 def generate_notes(model, unique_notes, max_generated=10000, seq_len=10):
     generate = [note_tokenizer.notes_to_index['empty']
                 for i in range(seq_len-1)]
-    generate += [note_tokenizer.notes_to_index['empty']]
+    generate += [note_tokenizer.notes_to_index['51']]
     for i in tqdm(range(max_generated)):
         test_input = np.array([generate])[:, i:i+seq_len]
         predicted_note = model.predict(test_input)

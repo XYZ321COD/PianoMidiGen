@@ -1,4 +1,4 @@
-path_to_model: "100_50.h5"
+path_to_model: "180_50.h5"
 path_to_tokenizer: "50_50.p"
 model_prefix: "Piano_AI_GRU_3_TIMES_smaller"
 frame_per_seconds: 5

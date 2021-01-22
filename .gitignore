@@ -1,0 +1,5 @@
+*.pyc
+results
+training_checkpoints
+dataset/
+*.zip
