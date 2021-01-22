@@ -1,5 +1,6 @@
 *.pyc
-results
-training_checkpoints
+results/
+training_checkpoints/
 dataset/
 *.zip
+logs/
