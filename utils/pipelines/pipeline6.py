@@ -50,8 +50,9 @@ class ModelOutPutIntoMidiFile(pipeline.Pipeline):
                     array_piano_roll[int(j), index] = 1
         generate_to_midi = df.pipeline5.NotesAndTimesStepIntoMidi().transform(
             array_piano_roll, fs=fs)
-        for note in generate_to_midi.instruments[0].notes:
-            note.velocity = 70
+        # This is high room for improvement - in future maybe use another deep learning model - regression to decided on the velocity of the note.
+        # for note in generate_to_midi.instruments[0].notes:
+        #     note.velocity = 70
         generate_to_midi.write(midi_file_name)
 
     def get_stats(self):

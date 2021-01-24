@@ -38,28 +38,26 @@ class NotesAndTimesStepIntoMidi(pipeline.Pipeline):
         pm = pretty_midi.PrettyMIDI()
         instrument = pretty_midi.Instrument(program=program)
 
-        piano_roll = np.pad(piano_roll, [(0, 0), (1, 1)], 'constant')
+        notes_changes = np.nonzero(np.diff(piano_roll))
 
-        velocity_changes = np.nonzero(np.diff(piano_roll).T)
-
-        prev_velocities = np.zeros(notes, dtype=int)
+        prev_note = np.zeros(notes, dtype=int)
         note_on_time = np.zeros(notes)
-
-        for time, note in zip(*velocity_changes):
-            velocity = piano_roll[note, time + 1]
+        # Mechanism for making sure that note is played constly not just tapped.
+        for note, time in zip(*notes_changes):
+            is_played_in_next_frame = bool(piano_roll[note, time + 1])
             time = time / fs
-            if velocity > 0:
-                if prev_velocities[note] == 0:
+            if is_played_in_next_frame:
+                if prev_note[note] == 0:
                     note_on_time[note] = time
-                    prev_velocities[note] = velocity
+                    prev_note[note] = is_played_in_next_frame
             else:
                 pm_note = pretty_midi.Note(
-                    velocity=prev_velocities[note],
+                    velocity=70,
                     pitch=note,
                     start=note_on_time[note],
                     end=time)
                 instrument.notes.append(pm_note)
-                prev_velocities[note] = 0
+                prev_note[note] = 0
         pm.instruments.append(instrument)
         return pm
 
