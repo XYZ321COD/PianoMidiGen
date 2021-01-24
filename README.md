@@ -17,7 +17,11 @@ It's consist of few modules.
 - settings.yml - can be overwrited to define new parameters of training.
 - settings_eval.yml - can be overwrited to define new parameters of evaluation.
 
-# Before training download dataset
+# Before training download dataset and get dependencies
+
+```sh
+ pip install -r Requirements.txt
+```
 
 ```sh
 python download.py
