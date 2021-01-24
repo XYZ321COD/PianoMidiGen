@@ -1,5 +1,5 @@
-path_to_model: "250_1.h5"
-path_to_tokenizer: "250_1.p"
+path_to_model: "220_100.h5"
+path_to_tokenizer: "50_100.p"
 model_prefix: "Piano_AI_GRU_3_TIMES_smaller"
 frame_per_seconds: 5
-song_length: 100
+song_length: 200
