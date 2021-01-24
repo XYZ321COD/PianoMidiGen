@@ -1,13 +1,13 @@
 seq_len: 20
-epochs: 5
+epochs: 250
 frame_per_seconds: 5
 number_of_songs_to_train_on: 1
 train_on_floyd: False
-path_to_dataset: "./dataset/maestro-v3.0.0-midi/maestro-v3.0.0/**/*.midi"
+path_to_dataset: "./dataset2/maestro-v3.0.0-midi/maestro-v3.0.0/**/*.midi"
 path_to_save_result_to: "./results/"
 path_to_save_models_to: "./models/"
-batch_song: 16
+batch_song: 1
 batch_sequences: 96
 lr: 0.001
-optimizer: "Nadam"
+optimizer: "Adam"
 loss_function: "sparse_categorical_crossentropy"

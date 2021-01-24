@@ -30,21 +30,8 @@ logger.info("Input of the model has shape {} and Output is {}".format(
     seq_len, output_shape))
 
 
-def generate_notes(model, unique_notes, max_generated=10000, seq_len=10):
-    generate = [note_tokenizer.notes_to_index['empty']
-                for i in range(seq_len-1)]
-    generate += [note_tokenizer.notes_to_index['51']]
-    for i in tqdm(range(max_generated)):
-        test_input = np.array([generate])[:, i:i+seq_len]
-        predicted_note = model.predict(test_input)
-        random_note_pred = choice(
-            unique_notes+1, 1, replace=False, p=predicted_note[0])
-        generate.append(random_note_pred[0])
-    return generate
-
-
-generate = generate_notes(
-    model, note_tokenizer.unique_notes, settings_eval['song_length'], seq_len)
+generate = df.pipeline7.GenMusic().transform(
+    model, note_tokenizer, note_tokenizer.unique_notes, settings_eval['song_length'], seq_len)
 df.pipeline6.ModelOutPutIntoMidiFile().transform(
     note_tokenizer, generate, "out_put.mid", start_index=seq_len-1, fs=settings_eval['frame_per_seconds'],
     max_generated=settings_eval['song_length'])

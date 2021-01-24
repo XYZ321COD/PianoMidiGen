@@ -1,4 +1,4 @@
-dropout: 0.3
+dropout: 0.0
 emb_unit: 256
 rnn_unit: 50
 dense_unit: 256

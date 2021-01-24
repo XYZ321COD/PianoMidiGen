@@ -92,7 +92,7 @@ class MidiVisualizer extends HTMLElement {
       this._parseMidiFile(blob);
     })
     .catch(function(error) {
-      console.log('Well, something went wrong somewhere. I don\'t know', error.message);
+      console.log('Error', error.message);
     });
   }
 

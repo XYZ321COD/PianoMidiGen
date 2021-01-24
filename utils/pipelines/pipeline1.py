@@ -34,7 +34,7 @@ class MidiToPythonVariablePipeline(pipeline.Pipeline):
         :rtype: list        
         """
         list_all_midi = glob.glob(folder)
-        seed(666)
+        seed(111)
         shuffle(list_all_midi)
         for _ in range(len(list_all_midi)):
             self.stat1.increment()
